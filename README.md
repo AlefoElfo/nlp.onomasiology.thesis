@@ -9,7 +9,7 @@ Se almacenan en un *jupyter notebook*. Para mayor comodidad se recomienda abrirl
 
 Las principales secciones son:
 - Diccionario de la Reforma Protestante
-- Pregunta natural al diccionario
+- Consulta natural al diccionario
 - Respuesta para el usuario
 - Evaluaciones
 - Conclusión
@@ -19,10 +19,10 @@ Hasta abajo del :link: [notebook](https://colab.research.google.com/github/Alefo
 
 El código es totalmente libre, pero no el contenido del diccionario: sus términos, definiciones e información extra. El diccionario está registrado para proteger los derechos de autor. **No plagies mi trabajo, mejor apóyame para terminarlo.** *Mejores son dos que uno; porque tienen mejor paga de su trabajo (Ecl 4.9)*. [Diccionario de la Reforma Protestante](https://www.facebook.com/DiccionarioReforma)
 ## Primera evaluación del modelo
-Se omiten las "Preguntas con contenido ajeno al diccionario" y "Preguntas con contenido relacionado, pero sin lexema al que se alude", las cuáles sí están disponibles en el :link: [notebook](https://colab.research.google.com/github/AlefoElfo/nlp.onomasiology.thesis/blob/main/Tesis_PLN_y_di%C3%A1logo_sema_onomasiol%C3%B3gico.ipynb).
+Se omiten las "Consultas con contenido ajeno al diccionario" y "Consultas con contenido relacionado, pero sin lexema al que se alude", las cuáles sí están disponibles en el :link: [notebook](https://colab.research.google.com/github/AlefoElfo/nlp.onomasiology.thesis/blob/main/Tesis_PLN_y_di%C3%A1logo_sema_onomasiol%C3%B3gico.ipynb).
 
 ### Resultados
-**Pregunta**|**Lexema esperado**|**¿Acertó**?
+**Consulta**|**Lexema esperado**|**¿Acertó**?
 |:---|:---|:---|
 Documento que quemó Martín Lutero|Exsurge Domine|Sí
 Tipo de monje que era martín Lutero|Orden de San Agustín|No
@@ -35,7 +35,7 @@ Escrito más famoso de Martín Lutero|Noventa y cinco tesis|Sí
 Cómo se llama cuando el pan y el vino se hacen el cuerpo de Cristo|Eucaristía. Transubstanciación|Sí
 
 ### Columnas
-- "Pregunta": La pregunta hecha por un usuario ficticio al diccionario
+- "Consulta": La consulta hecha por un usuario ficticio al diccionario
 - "Lexema esperado": El término esperado[^1]
 - "¿Acertó?": Si salió el lexema esperado en un total de 30 posibles similitudes
   - 10 principales similitudes con la lista de lexemas
@@ -45,7 +45,7 @@ Cómo se llama cuando el pan y el vino se hacen el cuerpo de Cristo|Eucaristía.
 
 ## Segunda evaluación del modelo
 ### Resultados
-Test|Pregunta|Lexema esperado|¿Acertó?|¿Lexema acertó?
+Test|Consulta|Lexema esperado|¿Acertó?|¿Lexema acertó?
 :---|:---|:---|:---|:---
 t1|pastor de la iglesia valdense|Barba.|No|No|
 t2|himno de la reforma protestante|Castillo fuerte es nuestro Dios.|Sí|-|
@@ -70,7 +70,7 @@ t20|cuál es la enseñanza de Calvino que dice que la salvación no se pierde|Ci
 
 ### Columnas
 - "Test":  test que se hicieron al modelo, del 1 al 20
-- "Pregunta": La pregunta hecha por un usuario ficticio al diccionario
+- "Consulta": La Consulta hecha por un usuario ficticio al diccionario
 - "Lexema esperado": El término esperado[^2]
 - "¿Acertó":  Si salió el lexema esperado en una lista de 20 posibles similitudes
   - 10 principales similitudes con las definiciones
@@ -101,7 +101,7 @@ Los pocos términos en el diccionario reducen mucho la capacidad de respuesta de
 
 Uno de los mayores problemas es la diferencia de longitud en la información extra. Por ejemplo, "tipo de monje que era Martín Lutero" no encontró similitudes porque tiene mucha información, a pesar de que contiene las mismas palabras: monje, Martín, Lutero.
 
-Otro problema es cuando la pregunta del usuario tiene alta coincidencia con términos que podrían considerarse secundarios. En la pregunta "Batallas entre católicos y protestantes" hay una similitud con el término "Anabaptista, Iglesia" de un 79.99% contra el 73.64% del lexema esperado, "Guerra de los ocienta años". Esto se debe a que "Anabaptista, iglesia" tiene más palabras y estas crean confusión al modelo: desacuerdo, pena capital, rechazan, controversia, menonitas, huteritas, bautistas, amish.
+Otro problema es cuando la Consulta del usuario tiene alta coincidencia con términos que podrían considerarse secundarios. En la consulta "Batallas entre católicos y protestantes" hay una similitud con el término "Anabaptista, Iglesia" de un 79.99% contra el 73.64% del lexema esperado, "Guerra de los ocienta años". Esto se debe a que "Anabaptista, iglesia" tiene más palabras y estas crean confusión al modelo: desacuerdo, pena capital, rechazan, controversia, menonitas, huteritas, bautistas, amish.
 
 ### Comentarios finales:
  - El modelo ayuda a descubrir sesgos al momento de definir términos
